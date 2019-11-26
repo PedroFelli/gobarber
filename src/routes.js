@@ -21,6 +21,8 @@ routes.post('/sessions', SessionController.store);
 
 routes.use(authMiddleware);
 
+routes.get('/', (req, res) => res.send('ok'));
+
 routes.put('/users', authMiddleware, UserController.update);
 
 routes.get('/providers', ProviderController.index);
