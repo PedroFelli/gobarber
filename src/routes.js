@@ -16,12 +16,12 @@ const { Router } = require('express');
 const routes = new Router();
 const upload = multer(multerConfig);
 
+routes.get('/', (req, res) => res.send({ msg: 'no' }));
+
 routes.post('/users', UserController.store);
 routes.post('/sessions', SessionController.store);
 
 routes.use(authMiddleware);
-
-routes.get('/', (req, res) => res.send('ok'));
 
 routes.put('/users', authMiddleware, UserController.update);
 
