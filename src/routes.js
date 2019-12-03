@@ -38,5 +38,6 @@ routes.get('/notifications', NotificationController.index);
 routes.put('/notifications/:id', NotificationController.update);
 
 routes.post('/files', upload.single('file'), FileController.store);
+routes.get('/files', FileController.index);
 
 module.exports = routes;
